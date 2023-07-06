@@ -5,17 +5,28 @@
 - [**LINK TO GITHUB**](https://github.com/Auryx/SEIRKALE-Project2)
 - [**LINK TO DEPLOYED WEBSITE**](https://project2-dp73.onrender.com/)
 - **List of Technologies used: HTML, JS, CSS, Node, Express, EJS, Mongo**
-- [**LINK TO Trello**](https://trello.com/b/n75K5lpS/project-2)
+- [**LINK TO TRELLO**](https://trello.com/b/n75K5lpS/project-2)
 
 ## Description
 
-The MTG Card Personal Tracker is an app that provides users with a tracker for which cards they own. A user may add cards to their personal collection and view the information of specific cards. Such information includes a card's Name, Mana Cost, Type Line, Text Box, Artist Info, Collector's Number, and Power/Toughness.
+The MTG Card Personal Tracker is an app that provides users with a tracker for which cards they own. A user may add cards to their personal collection and view the information of specific cards. Such information includes a card's Name, Mana Cost, Type Line, Text Box, Artist Info, Collector's Number, and Power/Toughness. The target market for this product would be MTG TCG collectors and players. 
 
 ## Mock Up of UI
 
--![Desktop View](https://i.imgur.com/hXa8nZm.png)
--![Mobile View](https://i.imgur.com/U3fRTbt.png)
+<!-- User Views -->
+-![Desktop View](https://i.imgur.com/0DPcS5S.png)
+-![Desktop View](https://i.imgur.com/EEsAl5O.png)
 
+-![Mobile View](https://i.imgur.com/2uPJwnF.png)
+-![Mobile View](https://i.imgur.com/aZ6p3oM.png)
+
+<!-- Cards Views -->
+-![Index Desktop View](https://i.imgur.com/hXa8nZm.png)
+-![Show Desktop View](https://i.imgur.com/r7u6Ydz.png)
+-![Edit/New Desktop View](https://i.imgur.com/sEh3h0R.png)
+-![Index Mobile View](https://i.imgur.com/U3fRTbt.png)
+-![Show Mobile View](https://i.imgur.com/7DBfYYV.png)
+-![Edit/New Mobile View](https://i.imgur.com/Fwypkhe.png)
 ## List of Backend Endpoints
 
 | ENDPOINT | METHOD | PURPOSE |
