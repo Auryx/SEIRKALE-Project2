@@ -9,7 +9,11 @@
 
 ## Description
 
-The MTG Card Personal Tracker is an app that provides users with a tracker for which cards they own. A user may add cards to their personal collection and view the information of specific cards. Such information includes a card's Name, Mana Cost, Type Line, Text Box, Artist Info, Collector's Number, and Power/Toughness. The target market for this product would be MTG TCG collectors and players. 
+The MTG Card Personal Tracker is an app that provides users with a tracker for which cards they own. A user may add cards to their personal collection and view the information of specific cards. Such information includes a card's Name, Mana Cost, Type Line, Text Box, Artist Info, Collector's Number, and Power/Toughness. 
+
+### Target Market
+
+The target market for this product would be MTG TCG collectors and players. 
 
 ## Mock Up of UI
 
