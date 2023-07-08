@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+    <%- include('../partials/files.ejs')%>
+</head>
+<body>
+    <main>
+        <div>
+            <article>
+                <h2><%= card.name %></h2>
+                <h3><%= card.type_line %></h3>
+                <h3><%= card.expansion_symbol %></h3>
+                <h3><%= card.artist_info %></h3>
+                <% if (card.power_toughness = ""){ %>
+                    <h3>Power/Toughness: <%= card.power_toughness %></h3>
+                <% } %>
+                <h3><%= card.text_box.abilities %></h3>
+                <h3><%= card.text_box.flavor_text %></h3>
+                <h3><%= card.mana_cost.colorless_info %></h3>
+                <h3><%= card.mana_cost.color_identity %></h3>
+                <a href="/card"><button>Back to Main Menu</button></a>
+            </article>
+        </div>
+    </main>
+</body>
+</html>
