@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <%- include('../partials/files.ejs')%>
+</head>
+<body>
+    You have reached the index
+    <% for (card of cards){%>
+        <article>
+            <a href="/card/<%= card._id%>"> 
+                <h2>
+                    <%= card.name %>
+                </h2>
+            </a>
+        </article>
+    <%}%>
+</body>
+</html>
