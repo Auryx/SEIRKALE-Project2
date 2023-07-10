@@ -28,11 +28,20 @@ router.post('/', async (req, res) => {
             flavor_text: req.body.flavor_text
         },
         mana_cost: [
-            {colorless_info: req.body.collectors_number},
-            {color_identity: req.body.color_identity}
+            {colorless_info: req.body.colorless_info},
+            {color_identity: req.body.colors_identity}
         ]
     }
-    console.log(newCard.text_box.abilities)
+
+    console.log(newCard)
+    await Card.create(newCard)
+    res.redirect('/card')
+})
+
+// DESTROY
+router.delete('/:id', async (req, res) => {
+    const id = req.params.id
+    await Card.findByIdAndDelete(id)
     res.redirect('/card')
 })
 
@@ -40,6 +49,7 @@ router.post('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     const id = req.params.id
     const card = await Card.findById(id)
+    console.log(card.mana_cost[1].color_identity)
     res.render('./card/show.ejs', {card})
 })
 

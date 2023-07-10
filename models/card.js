@@ -13,7 +13,7 @@ const cardSchema = new Schema({
     },
     mana_cost: [
         {colorless_info: String},
-        {color_identity: String}
+        {colors_identity: String}
     ]
 })
 
