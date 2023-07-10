@@ -22,7 +22,7 @@ mongoose.connection.on('open', async () => {
         },
         mana_cost: [
             {colorless_info: "3"},
-            {color_identity: "White"}
+            {colors_identity: "White"}
         ]},
         {
         name: "Force of Will", 
@@ -37,7 +37,7 @@ mongoose.connection.on('open', async () => {
         },
         mana_cost: [
             {colorless_info: "3"},
-            {color_identity: "Blue Blue"}
+            {colors_identity: "Blue Blue"}
         ]}
     ];
     await Card.create(startCard);
