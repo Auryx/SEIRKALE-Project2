@@ -19,8 +19,8 @@
                 <% } %>
                 <h3>Abilities: <%= card.text_box.abilities %></h3>
                 <h3>Flavor Text: <%= card.text_box.flavor_text %></h3>
-                <h3>Colorless Info: <%= card.mana_cost[0].colorless_info %></h3>
-                <h3>Color Identity: <%= card.mana_cost[1].colors_identity %></h3>
+                <h3>Colorless Info: <%= card.mana_cost.colorless_info %></h3>
+                <h3>Color Identity: <%= card.mana_cost.colors_identity %></h3>
                 <form action="/card/<%=card._id%>?_method=Delete" method="POST">
                     <input type="submit" value="Delete This Card">
                 </form>

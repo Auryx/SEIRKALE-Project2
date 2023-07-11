@@ -6,6 +6,7 @@ const router = express.Router()
 // INDEX
 router.get('/', async (req, res) => {
     const cards = await Card.find({})
+    // console.log(cards)
     res.render('./card/index.ejs', {cards})
 })
 
@@ -27,10 +28,10 @@ router.post('/', async (req, res) => {
             abilities: req.body.abilities,
             flavor_text: req.body.flavor_text
         },
-        mana_cost: [
-            {colorless_info: req.body.colorless_info},
-            {color_identity: req.body.colors_identity}
-        ]
+        mana_cost: {
+            colorless_info: req.body.colorless_info,
+            color_identity: req.body.colors_identity
+    }
     }
 
     console.log(newCard)
@@ -66,10 +67,10 @@ router.put('/:id', async (req, res) => {
             abilities: req.body.abilities,
             flavor_text: req.body.flavor_text
         },
-        mana_cost: [
-            {colorless_info: req.body.colorless_info},
-            {color_identity: req.body.colors_identity}
-        ]
+        mana_cost: {
+            colorless_info: req.body.colorless_info,
+            color_identity: req.body.colors_identity
+    }
     }
     // console.log(editCard)
     await Card.findByIdAndUpdate(id, editCard)
@@ -80,7 +81,7 @@ router.put('/:id', async (req, res) => {
 router.get('/:id', async (req, res) => {
     const id = req.params.id
     const card = await Card.findById(id)
-    // console.log(id, card)
+    console.log(id, card)
     res.render('./card/show.ejs', {card, id})
 })
 

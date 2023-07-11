@@ -11,10 +11,10 @@ const cardSchema = new Schema({
         abilities: String,
         flavor_text: String
     },
-    mana_cost: [
-        {colorless_info: String},
-        {colors_identity: String}
-    ]
+    mana_cost: {
+        colorless_info: String,
+        colors_identity: String
+    }
 })
 
 const Card = model('card', cardSchema)

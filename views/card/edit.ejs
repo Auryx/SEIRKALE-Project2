@@ -17,8 +17,8 @@
             <label>Power/Toughness: <input type="text" name="power_toughness" value="<%= card.power_toughness %>"/></label>
             <label>Abilities: <input type="text" name="abilities" value="<%= card.text_box.abilities %>"/></label>
             <label>Flavor Text: <input type="text" name="flavor_text" value="<%= card.text_box.flavor_text %>"/></label>
-            <label>Colorless Cost: <input type="text" name="colorless_info" value="<%= card.mana_cost[0].colorless_info %>'"/></label>
-            <label>Color Identity: <input type="text" name="colors_identity" value="<%= card.mana_cost[1].colors_identity %>'"/></label>
+            <label>Colorless Cost: <input type="text" name="colorless_info" value="<%= card.mana_cost.colorless_info %>'"/></label>
+            <label>Color Identity: <input type="text" name="colors_identity" value="<%= card.mana_cost.colors_identity %>'"/></label>
         </fieldset>
         <input type="submit" value="sumbit the card edit">
     </form>

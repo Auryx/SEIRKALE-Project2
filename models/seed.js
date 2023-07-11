@@ -20,10 +20,10 @@ mongoose.connection.on('open', async () => {
             abilities: `During your turn, your opponents can't cast spells or activate abilities of artifacts, creatures, or enchantments. Whenever Myrel, Shield of Argive attacks, create X 1/1 colorless Soldier artifact creature tokens, where X is the number of Soldiers you control.`,
             flavor_text: " "
         },
-        mana_cost: [
-            {colorless_info: "3"},
-            {colors_identity: "White"}
-        ]},
+        mana_cost: {
+            colorless_info: "3",
+            colors_identity: "White"
+    }},
         {
         name: "Force of Will", 
         type_line: "Instant", 
@@ -35,10 +35,10 @@ mongoose.connection.on('open', async () => {
             abilities: `You may pay 1 life and exile a blue card from your hand rather than pay this spell's mana cost. Counter target spell.`,
             flavor_text: "Your artillery will burn itself out before I allow my focus to waver."
         },
-        mana_cost: [
-            {colorless_info: "3"},
-            {colors_identity: "Blue Blue"}
-        ]}
+        mana_cost: {
+            colorless_info: "3",
+            colors_identity: "Blue Blue",
+        }}
     ];
     await Card.create(startCard);
 
