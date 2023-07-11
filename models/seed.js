@@ -4,11 +4,11 @@ const Card = require('./card');
 
 mongoose.connection.on('open', async () => {
 
-    //1. create entries into the db using the startFruits
+    //1. create entries into the db using the startCard
     //1a. in order to do this we need to delete everything
     await Card.deleteMany();
 
-    //1b. then using startFruits, we will insert that into the db
+    //1b. then using startCard, we will insert that into the db
     const startCard = [{ 
         name: "Myrel, Shield of Argive", 
         type_line: "Legendary Creature - Human Soldier", 

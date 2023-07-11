@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <form action="/card/<%= id %>?_method=PUT" method="post">
+        <fieldset>
+            <legend>Create a new card</legend>
+            <label>Name: <input type="text" name="name" value="<%= card.name %>"/></label>
+            <label>Type Line: <input type="text" name="type_line" value="<%= card.type_line %>"/></label>
+            <label>Expansion Symbol: <input type="text" name="expansion_symbol" value="<%= card.expansion_symbol %>"/></label>
+            <label>Artist Info: <input type="text" name="artist_info" value="<%= card.artist_info %>"/></label>
+            <label>Collector's Number: <input type="text" name="collectors_number" value="<%= card.collectors_number %>"/></label>
+            <label>Power/Toughness: <input type="text" name="power_toughness" value="<%= card.power_toughness %>"/></label>
+            <label>Abilities: <input type="text" name="abilities" value="<%= card.text_box.abilities %>"/></label>
+            <label>Flavor Text: <input type="text" name="flavor_text" value="<%= card.text_box.flavor_text %>"/></label>
+            <label>Colorless Cost: <input type="text" name="colorless_info" value="<%= card.mana_cost[0].colorless_info %>'"/></label>
+            <label>Color Identity: <input type="text" name="colors_identity" value="<%= card.mana_cost[1].colors_identity %>'"/></label>
+        </fieldset>
+        <input type="submit" value="sumbit the card edit">
+    </form>
+    <h3><a href="/card">GO BACK TO INDEX</a></h3>
+</body>
+</html> 
