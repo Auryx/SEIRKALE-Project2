@@ -5,6 +5,7 @@ const methodOverride = require("method-override")
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
 const CardRouter = require('./controllers/card')
+const UserRouter = require('./controllers/user')
 
 // These go last
 const app = express()
@@ -16,12 +17,20 @@ app.use(methodOverride("_method"))
 app.use(express.static("public"))
 app.use(express.urlencoded())
 
+app.use(session({
+    secret: process.env.SECRET,
+    store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL}),
+    saveUninitialized: true, 
+    resave: false,
+}));
+
 // IMPORTED CONTROLLER(S)
 app.use('/card', CardRouter)
+app.use('/user', UserRouter)
 
 // Controllers
 app.get('/', (req, res) => {
-    res.send('Welcome to the internet, what do you require?')
+    res.render('landing.ejs')
 })
 
 //Listener
