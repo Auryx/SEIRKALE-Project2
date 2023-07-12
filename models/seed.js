@@ -1,5 +1,6 @@
 const mongoose = require('./connection');
 const Card = require('./card');
+const Land = require('./land');
 
 
 mongoose.connection.on('open', async () => {
@@ -45,9 +46,42 @@ mongoose.connection.on('open', async () => {
     }
     ];
     await Card.create(startCard);
+    console.log(`completed startCard`)
+    await Land.deleteMany();
+    const startLand = [{
+        name: "Island",
+        type_line: "Land",
+        artist_info: "Terese Nielsen",
+        img_link: "https://cdn1.mtggoldfish.com/images/gf/Island%2B%255BPRM-GUR%255D.jpg"
+    },
+        {
+        name: "Forest",
+        type_line: "Land",
+        artist_info: "Terese Nielsen",
+        img_link: "https://cdn1.mtggoldfish.com/images/gf/Forest%2B%255BPRM-GUR%255D.jpg"
+    },
+        {
+        name: "Mountain",
+        type_line: "Land",
+        artist_info: "Terese Nielsen",
+        img_link: "https://cdn1.mtggoldfish.com/images/gf/Mountain%2B%255BPRM-GUR%255D.jpg"
+    },
+        {
+        name: "Swamp",
+        type_line: "Land",
+        artist_info: "Terese Nielsen",
+        img_link: "https://cdn1.mtggoldfish.com/images/gf/Swamp%2B%255BPRM-GUR%255D.jpg"
+    },
+        {
+        name: "Plains",
+        type_line: "Land",
+        artist_info: "Terese Nielsen",
+        img_link: "https://cdn1.mtggoldfish.com/images/gf/Plains%2B%255BPRM-GUR%255D.jpg"
+    }
+    ];
 
+    await Land.create(startLand)
+    console.log(`completed startLand`)
     //2. we are going to close the connection
     mongoose.connection.close();
-
-
 })

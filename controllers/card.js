@@ -1,6 +1,6 @@
 const express = require('express')
 const Card = require('../models/card')
-
+const Land = require('../models/land')
 const router = express.Router()
 
 router.use((req, res, next) => {
@@ -14,8 +14,9 @@ router.use((req, res, next) => {
 router.get('/', async (req, res) => {
     let username = req.session.username
     const cards = await Card.find({username})
+    const lands = await Land.find()
     // console.log(cards)
-    res.render('./card/index.ejs', {cards, username})
+    res.render('./card/index.ejs', {cards, lands, username})
 })
 
 // NEW 
@@ -90,9 +91,14 @@ router.put('/:id', async (req, res) => {
 // SHOW // THIS GOES AT THE BOTTOM OF THE GETS
 router.get('/:id', async (req, res) => {
     const id = req.params.id
-    const card = await Card.findById(id)
-    console.log(id, card)
-    res.render('./card/show.ejs', {card, id})
+    let card = await Card.findById(id)
+    let land = await Land.findById(id)
+    if (card === {}) {
+        res.render('./card/show.ejs', {card: land, id})
+    } else {
+        res.render('./card/show.ejs', {card, id})
+    }
+    console.log(id, card, land)
 })
 
 module.exports = router

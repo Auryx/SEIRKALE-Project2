@@ -15,7 +15,7 @@ const PORT = process.env.PORT
 app.use(morgan('tiny')); //logging
 app.use(methodOverride("_method"))
 app.use(express.static("public"))
-app.use(express.urlencoded())
+app.use(express.urlencoded({extended: false }))
 
 app.use(session({
     secret: process.env.SECRET,
@@ -30,7 +30,7 @@ app.use('/user', UserRouter)
 
 // Controllers
 app.get('/', (req, res) => {
-    res.render('landing.ejs')
+    res.render('landing/landing.ejs')
 })
 
 //Listener
