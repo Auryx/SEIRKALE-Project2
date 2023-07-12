@@ -23,7 +23,9 @@ mongoose.connection.on('open', async () => {
         mana_cost: {
             colorless_info: "3",
             colors_identity: "White"
-    }},
+        },
+        img_link: "https://www.artofmtg.com/wp-content/uploads/2022/12/Myrel-Shield-of-Argive.png"
+    },
         {
         name: "Force of Will", 
         type_line: "Instant", 
@@ -38,7 +40,9 @@ mongoose.connection.on('open', async () => {
         mana_cost: {
             colorless_info: "3",
             colors_identity: "Blue Blue",
-        }}
+        },
+        img_link: "https://product-images.tcgplayer.com/fit-in/539x539/4146.jpg"
+    }
     ];
     await Card.create(startCard);
 

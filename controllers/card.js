@@ -3,11 +3,19 @@ const Card = require('../models/card')
 
 const router = express.Router()
 
+router.use((req, res, next) => {
+    if(req.session.loggedIn){
+        next();
+    }else{
+        res.redirect('/')
+    }
+})
 // INDEX
 router.get('/', async (req, res) => {
-    const cards = await Card.find({})
+    let username = req.session.username
+    const cards = await Card.find({username})
     // console.log(cards)
-    res.render('./card/index.ejs', {cards})
+    res.render('./card/index.ejs', {cards, username})
 })
 
 // NEW 
@@ -31,7 +39,9 @@ router.post('/', async (req, res) => {
         mana_cost: {
             colorless_info: req.body.colorless_info,
             color_identity: req.body.colors_identity
-    }
+        },
+        img_link: req.body.img_link,
+        username: req.session.username
     }
 
     console.log(newCard)

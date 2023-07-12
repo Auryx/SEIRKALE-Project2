@@ -14,7 +14,9 @@ const cardSchema = new Schema({
     mana_cost: {
         colorless_info: String,
         colors_identity: String
-    }
+    },
+    img_link: String,
+    username: String
 })
 
 const Card = model('card', cardSchema)

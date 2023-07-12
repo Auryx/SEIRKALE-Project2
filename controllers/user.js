@@ -1,5 +1,6 @@
 const express = require('express')
-const Card = require('../models/card')
+const User = require('../models/user')
+const bcrypt = require('bcryptjs')
 
 const router = express.Router()
 
@@ -10,7 +11,9 @@ router.get('/signup', (req, res) => {
 router.post('/signup', async (req, res) => {
     try{
         req.body.password = await bcrypt.hash(req.body.password, await bcrypt.genSalt(10));
-        await User.create(req.body);
+        console.log(req.body)
+        const newUser = await User.create(req.body);
+        // res.send(newUser)
         res.redirect('/user/login');
     }catch{
         res.send('there was an error');
@@ -34,7 +37,7 @@ router.post('/login', async (req, res) => {
             req.session.loggedIn = true
     
             
-            res.redirect('/fruits')
+            res.redirect('/card')
         }else{
             res.send('incorrect password')
         }
