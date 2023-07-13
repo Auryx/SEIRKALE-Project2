@@ -80,8 +80,9 @@ router.put('/:id', async (req, res) => {
         },
         mana_cost: {
             colorless_info: req.body.colorless_info,
-            color_identity: req.body.colors_identity
-    }
+            colors_identity: req.body.colors_identity
+        },
+        img_link: req.body.img_link
     }
     // console.log(editCard)
     await Card.findByIdAndUpdate(id, editCard)
@@ -91,14 +92,16 @@ router.put('/:id', async (req, res) => {
 // SHOW // THIS GOES AT THE BOTTOM OF THE GETS
 router.get('/:id', async (req, res) => {
     const id = req.params.id
-    let card = await Card.findById(id)
-    let land = await Land.findById(id)
+    const card = await Card.findById(id)
+    const land = await Land.findById(id)
     if (card === {}) {
-        res.render('./card/show.ejs', {card: land, id})
+        console.log("hitting if")
+        res.render('./card/show.ejs', {land, id})
     } else {
-        res.render('./card/show.ejs', {card, id})
+        console.log("hitting else")
+        res.render('./card/show.ejs', {card, land, id})
     }
-    console.log(id, card, land)
+    console.log(`ID: ${id} Card: ${card} Land: ${land}`)
 })
 
 module.exports = router

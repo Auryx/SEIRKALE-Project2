@@ -9,15 +9,26 @@
 <body>
     You have reached the index
     <h3><a href="/card/new">Create New Card</a></h3>
-    <% for (card of cards){%>
+    <% for (land of lands){%>
         <article>
-            <a href="/card/<%= card._id%>"> 
-                <h2>
-                    <%= card.name %>
-                </h2>
-                <img src="<%= card.img_link%>"/>
+            <a href="/card/<%= land._id%>"> 
+                <img src="<%= land.img_link%>"/>
             </a>
         </article>
     <%}%>
+    <% for (card of cards){%>
+        <article>
+            <a href="/card/<%= card._id%>">
+                <% if (card.img_link === "") { %>
+                    <h2>
+                        <%= card.name %>
+                    </h2>
+                <% } else { %>
+                    <img src="<%= card.img_link%>"/>
+                <% } %>
+            </a>
+        </article>
+    <%}%>
+    
 </body>
 </html>
