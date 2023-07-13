@@ -1,3 +1,15 @@
+html {
+    font-family: 'Sorts Mill Goudy', serif;
+}
 body {
     background-color: wheat;
+    font-family: 'Sorts Mill Goudy', serif;
+    display: grid;
+    grid-template-columns: 10% 20% 10% 20% 10% 20% 10%;
+    grid-template-rows: 100px repeat(auto-fill, 20%);
 }
+.header{
+    grid-column-start: 3;
+    grid-column-end: span 5;
+}
+

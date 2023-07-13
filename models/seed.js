@@ -19,7 +19,7 @@ mongoose.connection.on('open', async () => {
         collectors_number: "18",
         text_box: {
             abilities: `During your turn, your opponents can't cast spells or activate abilities of artifacts, creatures, or enchantments. Whenever Myrel, Shield of Argive attacks, create X 1/1 colorless Soldier artifact creature tokens, where X is the number of Soldiers you control.`,
-            flavor_text: " "
+            flavor_text: ""
         },
         mana_cost: {
             colorless_info: "3",

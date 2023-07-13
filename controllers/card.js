@@ -45,7 +45,7 @@ router.post('/', async (req, res) => {
         username: req.session.username
     }
 
-    console.log(newCard)
+    // console.log(newCard)
     await Card.create(newCard)
     res.redirect('/card')
 })
@@ -94,14 +94,34 @@ router.get('/:id', async (req, res) => {
     const id = req.params.id
     const card = await Card.findById(id)
     const land = await Land.findById(id)
-    if (card === {}) {
-        console.log("hitting if")
-        res.render('./card/show.ejs', {land, id})
+    if (card === null) {
+        // console.log("hitting if")
+        let pineapple = {
+            toggle: card ? true : false,
+            name: '', 
+            type_line: '', 
+            expansion_symbol: '', 
+            artist_info: '', 
+            power_toughness: '', 
+            collectors_number: '',
+            text_box: {
+                abilities: '',
+                flavor_text: ''
+            },
+            mana_cost: {
+                colorless_info: '',
+                colors_identity: ''
+            },
+            img_link: '',
+            ...land
+        }
+        console.log(pineapple)
+        res.render('./card/show.ejs', {card: pineapple, id})
     } else {
-        console.log("hitting else")
-        res.render('./card/show.ejs', {card, land, id})
+        // console.log("hitting else")
+        res.render('./card/show.ejs', {card, id})
     }
-    console.log(`ID: ${id} Card: ${card} Land: ${land}`)
+    // console.log(`ID: ${id} Card: ${card} Land: ${land}`)
 })
 
 module.exports = router
