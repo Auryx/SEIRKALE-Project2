@@ -25,10 +25,31 @@ body {
     margin: 0 auto;
 }
 .card{
+    margin: 0 auto;
+    height: 100%;
+}
+.card-show-img{
     display: flex;
     justify-content: center;
     align-items: center;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: fill;
+}
+.show-img{
+    grid-column: 2/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: fill;
     margin: 0 auto;
+}
+.show-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 @media only screen and (min-width:600px){ */
     body {

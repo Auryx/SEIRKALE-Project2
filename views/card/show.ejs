@@ -7,34 +7,45 @@
     <%- include('../partials/files.ejs')%>
 </head>
 <body>
-    <%- include('../partials/card_header.ejs')%>
     <main>
+
         <div>
             <article>
                 <% if(card.toggle !== false){ %>
-                    <% if (card.type_line != false){%><h3><%= card.type_line %></h3><%}%>
-                    <% if (card.expansion_symbol != false){%><h3><%= card.expansion_symbol %></h3><%}%>
-                    <% if (card.artist_info != false){%><h3><%= card.artist_info %></h3><%}%>
-                    <% if (card.power_toughness != false){%><h3>Power/Toughness: <%= card.power_toughness %></h3><%}%>
-                    <% if (card.text_box.abilities != false){%><h3>Abilities: <%= card.text_box.abilities %></h3><%}%>
-                    <% if (card.text_box.flavor_text != false){%><h3>Flavor Text: <%= card.text_box.flavor_text %></h3><%}%>
-                    <% if (card.mana_cost.colorless_info != false){%><h3>Colorless Info: <%= card.mana_cost.colorless_info %></h3><%}%>
-                    <% if (card.mana_cost.colors_identity != false){%><h3>Color Identity: <%= card.mana_cost.colors_identity %></h3><%}%>
-                    <div class="show_img"><img src="<%= card.img_link%>"/></div>
+                    <div class="header-container"><h1><%= card.name%></h1></div>
+                    <div class="card-container">
+                        <% if (card.type_line != false){%><div class="show-text"><h3><%= card.type_line %></h3></div><%}%>
+                        <% if (card.expansion_symbol != false){%><div class="show-text"><h3><%= card.expansion_symbol %></h3></div><%}%>
+                        <% if (card.artist_info != false){%><div class="show-text"><h3><%= card.artist_info %></h3></div><%}%>
+                        <% if (card.power_toughness != false){%><div class="show-text"><h3>Power/Toughness: <%= card.power_toughness %></h3></div><%}%>
+                        <% if (card.text_box.abilities != false){%><div class="show-text"><h3>Abilities: <%= card.text_box.abilities %></h3></div><%}%>
+                        <% if (card.text_box.flavor_text != false){%><div class="show-text"><h3>Flavor Text: <%= card.text_box.flavor_text %></h3></div><%}%>
+                        <% if (card.mana_cost.colorless_info != false){%><div class="show-text"><h3>Colorless Info: <%= card.mana_cost.colorless_info %></h3></div><%}%>
+                        <% if (card.mana_cost.colors_identity != false){%><div class="show-text"><h3>Color Identity: <%= card.mana_cost.colors_identity %></h3></div><%}%>
+                        <div class="show_img"><img src="<%= card.img_link%>"/></div>
+                    </div>
                     <form action="/card/<%=card._id%>?_method=Delete" method="POST">
                         <input type="submit" value="Delete This Card">
                     </form>
                 <% }else{ %>
-                    <h3><%= card._doc.type_line %></h3>
-                    <h3><%= card._doc.artist_info %></h3>
-                    <div class="show_img"><img src="<%= card._doc.img_link%>"/></div>
+                    <div class="header-container"><h1><%= card._doc.name%></h1></div>
+                    <div class="card-container">
+                        <div>
+                            <div class="show-text"><h3><%= card._doc.type_line %></h3></div>
+                            <div class="show-text"><h3><%= card._doc.artist_info %></h3></div>
+                        </div>
+                        <div class="show_img"><img src="<%= card._doc.img_link%>"/></div>
+                    </div>
                 <%}%>
             </article>
         </div>
-        <% if(card.toggle !== false){ %>
-            <a href="/card/<%=card._id%>/edit"><button>Edit this card</button></a>
-        <%}%>
-        <a href="/card"><button>Back to Main Menu</button></a>
+
+        <div class="footer">
+            <% if(card.toggle !== false){ %>
+                <a href="/card/<%=card._id%>/edit"><button>Edit this card</button></a>
+            <%}%>
+            <a href="/card"><button>Back to Main Menu</button></a>
+        </div>
     </main>
 </body>
 </html>
