@@ -39,7 +39,7 @@ router.post('/', async (req, res) => {
         },
         mana_cost: {
             colorless_info: req.body.colorless_info,
-            color_identity: req.body.colors_identity
+            colors_identity: req.body.colors_identity
         },
         img_link: req.body.img_link,
         username: req.session.username
