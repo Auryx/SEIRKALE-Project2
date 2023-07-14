@@ -13,7 +13,7 @@
             <article>
                 <% if(card.toggle !== false){ %>
                     <div class="header-container"><h1><%= card.name%></h1></div>
-                    <div class="card-container">
+                    <div class="show-container">
                         <div class="sub-card-1">
                             <% if (card.mana_cost.colorless_info != false){%><div class="show-text"><h3>Colorless Info: <%= card.mana_cost.colorless_info %></h3></div><%}%>
                             <% if (card.mana_cost.colors_identity != false){if (card.mana_cost.colors_identity != undefined){%><div class="show-text"><h3>Color Identity: <%= card.mana_cost.colors_identity %></h3></div><%}}%>
@@ -31,7 +31,7 @@
                     </div>
                 <% }else{ %>
                     <div class="header-container"><h1><%= card._doc.name%></h1></div>
-                    <div class="card-container">
+                    <div class="show-container">
                         <div>
                             <div class="show-text"><h3><%= card._doc.type_line %></h3></div>
                             <div class="show-text"><h3><%= card._doc.artist_info %></h3></div>
