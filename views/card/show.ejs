@@ -31,7 +31,7 @@
                 <%}%>
             </article>
         </div>
-        <% if(card !== null){ %>
+        <% if(card.toggle !== false){ %>
             <a href="/card/<%=card._id%>/edit"><button>Edit this card</button></a>
         <%}%>
         <a href="/card"><button>Back to Main Menu</button></a>

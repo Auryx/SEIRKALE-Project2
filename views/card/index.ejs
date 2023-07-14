@@ -7,28 +7,33 @@
     <%- include('../partials/files.ejs')%>
 </head>
 <body>
-    <div class="header">You have reached the index</div>
-    <h3><a href="/card/new">Create New Card</a></h3>
-    <% for (land of lands){%>
-        <div class="card"> 
-            <a href="/card/<%= land._id%>"> 
-                <img src="<%= land.img_link%>"/>
-            </a>
-        </div>
-    <%}%>
-    <% for (card of cards){%>
-        <div class="card">
-            <a href="/card/<%= card._id%>">
-                <% if (card.img_link === "") { %>
-                    <h2>
-                        <%= card.name %>
-                    </h2>
-                <% } else { %>
-                    <img src="<%= card.img_link%>"/>
-                <% } %>
-            </a>
-        </div>
-    <%}%>
+    <div class="header-container"> 
+        <h1><%=username%>'s Cards</h1>
+        <h3><a href="/card/new">Create New Card</a></h3>
+    </div>
+
+    <div class="card-container">
+        <% for (land of lands){%>
+            <div class="card"> 
+                <a href="/card/<%= land._id%>"> 
+                    <img src="<%= land.img_link%>"/>
+                </a>
+            </div>
+        <%}%>
+        <% for (card of cards){%>
+            <div class="card">
+                <a href="/card/<%= card._id%>">
+                    <% if (card.img_link === "") { %>
+                        <h2>
+                            <%= card.name %>
+                        </h2>
+                    <% } else { %>
+                        <img src="<%= card.img_link%>"/>
+                    <% } %>
+                </a>
+            </div>
+        <%}%>
+    </div>      
     
 </body>
 </html>
