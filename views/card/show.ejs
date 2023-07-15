@@ -14,7 +14,7 @@
                 <% if(card.toggle !== false){ %>
                     <div class="header-container"><h1><%= card.name%></h1></div>
                     <div class="show-container">
-                        <div class="sub-card-1">
+                        <div class="sub-card-1" class="opacity">
                             <% if (card.mana_cost.colorless_info != false){%><div class="show-text"><h3>Colorless Info: <%= card.mana_cost.colorless_info %></h3></div><%}%>
                             <% if (card.mana_cost.colors_identity != false){if (card.mana_cost.colors_identity != undefined){%><div class="show-text"><h3>Color Identity: <%= card.mana_cost.colors_identity %></h3></div><%}}%>
                             <% if (card.type_line != false){%><div class="show-text"><h3><%= card.type_line %></h3></div><%}%>
@@ -25,7 +25,7 @@
                         </div>
                         <div class="sub-card-2">
                         <% if (card.text_box.abilities != false){%><div class="show-text"><h3>Abilities: <%= card.text_box.abilities %></h3></div><%}%>
-                        <% if (card.text_box.flavor_text != false){%><div class="show-text"><h3>Flavor Text: <%= card.text_box.flavor_text %></h3></div><%}%>
+                        <% if (card.text_box.flavor_text != false){%><div class="show-text"><h3>Flavor Text:<i> <%= card.text_box.flavor_text %></i></h3></div><%}%>
                         </div>  
                         <div class="show_img"><img src="<%= card.img_link%>"/></div>
                     </div>

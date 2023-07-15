@@ -10,20 +10,28 @@
     <form action="/card/<%= id %>?_method=PUT" method="post">
         <fieldset>
             <legend>Create a new card</legend>
-            <label>Name: <input type="text" name="name" value="<%= card.name %>"/></label>
-            <label>Type Line: <input type="text" name="type_line" value="<%= card.type_line %>"/></label>
-            <label>Expansion Symbol: <input type="text" name="expansion_symbol" value="<%= card.expansion_symbol %>"/></label>
-            <label>Artist Info: <input type="text" name="artist_info" value="<%= card.artist_info %>"/></label>
-            <label>Collector's Number: <input type="text" name="collectors_number" value="<%= card.collectors_number %>"/></label>
-            <label>Power/Toughness: <input type="text" name="power_toughness" value="<%= card.power_toughness %>"/></label>
-            <label>Abilities: <input type="text" name="abilities" value="<%= card.text_box.abilities %>"/></label>
-            <label>Flavor Text: <input type="text" name="flavor_text" value="<%= card.text_box.flavor_text %>"/></label>
-            <label>Colorless Cost: <input type="text" name="colorless_info" value="<%= card.mana_cost.colorless_info %>"/></label>
-            <label>Color Identity: <input type="text" name="colors_identity" value="<%= card.mana_cost.colors_identity %>"/></label>
-            <label>Image Link: <input type="text" name="img_link" value="<%= card.img_link %>"/></label>
+            <div class="show-container">
+                <div class="sub-card-1"> 
+                    <div class="show-text" class="opacity"><label>Name: <input type="text" name="name" value="<%= card.name %>"/></label></div>
+                    <div class="show-text" class="opacity"><label>Colorless Cost: <input type="text" name="colorless_info" value="<%= card.mana_cost.colorless_info %>"/></label></div>
+                    <div class="show-text" class="opacity"><label>Color Identity: <input type="text" name="colors_identity" value="<%= card.mana_cost.colors_identity %>"/></label></div>
+                    <div class="show-text" class="opacity"><label>Type Line: <input type="text" name="type_line" value="<%= card.type_line %>"/></label></div>
+                    <div class="show-text" class="opacity"><label>Expansion Symbol: <input type="text" name="expansion_symbol" value="<%= card.expansion_symbol %>"/></label></div>
+                    <div class="show-text" class="opacity"><label>Artist Info: <input type="text" name="artist_info" value="<%= card.artist_info %>"/></label></div>
+                    <div class="show-text" class="opacity"><label>Power/Toughness: <input type="text" name="power_toughness" value="<%= card.power_toughness %>"/></label></div>
+                    <div class="show-text"> class="opacity"<label>Collector's Number: <input type="text" name="collectors_number" value="<%= card.collectors_number %>"/></label></div>
+                </div>
+                <div class="sub-card-2">
+                    <div class="show-text" class="opacity"><label>Abilities: <input type="text" name="abilities" value="<%= card.text_box.abilities %>"/></label></div>
+                    <div class="show-text" class="opacity"><label>Flavor Text: <input type="text" name="flavor_text" value="<%= card.text_box.flavor_text %>"/></label></div>
+                </div>
+                <div class="show_img" class="opacity"><label>Image Link: <input type="text" name="img_link" value="<%= card.img_link %>"/></label></div>
+            </div>
         </fieldset>
         <input type="submit" value="sumbit the card edit">
     </form>
-    <h3><a href="/card">GO BACK TO INDEX</a></h3>
+    <div class="opacity">
+        <h3><a href="/card">Back to Main Menu</a></h3>
+    </div>
 </body>
 </html> 
