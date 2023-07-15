@@ -32,6 +32,11 @@ app.use('/user', UserRouter)
 app.get('/', (req, res) => {
     res.render('landing/landing.ejs')
 })
+app.get('/logout', (req, res) => {
+    req.session.destroy(err => {
+        res.redirect('/')
+    })
+})
 
 //Listener
 app.listen(PORT, () => {
