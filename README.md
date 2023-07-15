@@ -50,6 +50,14 @@ The target market for this product would be MTG TCG collectors and players.
 | /login | POST | Check that the username and password match profile data, then redirect to /cards |
 | /logout | GET | End current user session then redirect to / |
 
+## Technologies used
+- HTML
+- CSS
+- JS
+- Express
+- MongoDB
+- Node
+
 ## ERD (ENTITY RELATIONSHIP DIAGRAM)
 
 ![PICTURE OF ERD](https://i.imgur.com/OjBY8b7.png)
